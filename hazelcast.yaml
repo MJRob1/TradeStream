@@ -1,0 +1,12 @@
+hazelcast:
+  map:
+    trades-map:
+      event-journal: 
+        enabled: true
+        capacity: 3600000
+
+
+  jet: 
+    enabled: true
+    resource-upload-enabled: true
+
