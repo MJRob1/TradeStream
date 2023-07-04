@@ -107,6 +107,8 @@ public class TradeStream {
          *
          */
 
+
+
          StreamStage<KeyedWindowResult<String, Double>> averagePrices = enrichedTrade
                 .groupingKey( entry -> entry.getValue().getString("symbol"))
                 .window(WindowDefinition.tumbling(10000))

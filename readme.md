@@ -3,7 +3,7 @@
 Project consists of Hazelcast cluster, a trade generator client and a TradeStream pipeline job.
 
 The trade generator client creates SQL mappings for IMaps, loads reference data into lookup-map, and sends 
-(currently hardcoded to only 1000) fake trades (tradeId, tradeTime, symbol, quantity, price) into trade-map. 
+fake trades (tradeId, tradeTime, symbol, quantity, price) on an infinite loop into trade-map. 
 An IMap Journal is configured on the trades-map which creates a trade event stream.
 
 The TradeStream Pipeline job listens to the trade event stream and does a number of actions on the trade event stream:
@@ -49,7 +49,7 @@ hz-cli submit --class demos.pipelines.TradeStream target/monitoring-pipeline-1.0
 
 ```shell
 cd trade-generator
-java -jar trade-generator/target/trade-generator-1.0-SNAPSHOT.jar
+java -jar target/trade-generator-1.0-SNAPSHOT.jar
 ```
 
 

@@ -29,14 +29,17 @@ public class TradeGenerator {
 
         System.out.println("In TradeGenerator");
 
-        for (int i = 1; i < 1000; i++) {
+        //for (int i = 1; i < 1000; i++) {
+        int i = 1;
+        while (true) {
 
-            Trade trade = Trade.fake(i);
+            Trade trade = Trade.fake(i++);
 
             tradesMap.put(trade.getTradeId(), trade);
-            sleep(5000);
+            Thread.sleep(1000);
+           // sleep(5000);
         }
 
-        HazelcastClient.shutdownAll();
+       // HazelcastClient.shutdownAll();
     }
 }
